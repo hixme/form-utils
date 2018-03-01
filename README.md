@@ -18,5 +18,7 @@ Normalizers in this context, filters characters from a string that do not match 
 **currencyToDecimal(dec, symb = '$')** - returns function(str) to normalize a string that mimics currency (eg. "$123.45") that contains symb (default is '$')and returns a string that could convert to a decimal with the decimal value length (dec) (eg. "123.45")
 
 ## Sanitizers
+Sanitizers are functions to clean data, either while getting from database to use in a form, or to ready data for posting to a database.
 
 ## Validations
+Validations will return a boolean if data is valid. Used mostly to validate field data, but might be used across form data.
