@@ -17,6 +17,8 @@ Normalizers in this context, filters characters from a string that do not match 
 
 **currencyToDecimal(dec, symb = '$')** - returns function(str) to normalize a string that mimics currency (eg. "$123.45") that contains symb (default is '$')and returns a string that could convert to a decimal with the decimal value length (dec) (eg. "123.45")
 
+**currencyToFixedDecimal(int, dec, symb = '$')** - returns function(str) to normalize a string that mimics currency (eg. "$123.45") that contains symb (default is '$')and returns a string that could convert to a integer to integer value length (int) and decimal with the decimal value length (dec) (eg. currencyToFixedDecimal(3,2)("1123.45") -> "123.45")
+
 ## Sanitizers
 Sanitizers are functions to clean data, either while getting from database to use in a form, or to ready data for posting to a database.
 
