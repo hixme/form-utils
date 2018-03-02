@@ -1,0 +1,3 @@
+const ifRegex = (rgx) => str => rgx.test(str) || str === undefined
+
+export default iRegex
