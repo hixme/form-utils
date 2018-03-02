@@ -1,5 +1,5 @@
 # form.l
-utility functions for forms, including functions, formatters, normalizers, sanitizers, and validations.
+utility functions for forms, including functions, formatters, normalizers, sanitizers, sorters, and validations.
 
 ## Functions
 
@@ -21,6 +21,9 @@ Normalizers in this context, filters characters from a string that do not match 
 
 ## Sanitizers
 Sanitizers are functions to clean data, either while getting from database to use in a form, or to ready data for posting to a database.
+
+## Sorters
+Sorters are functions to sort list arrays.
 
 ## Validations
 Validations will return a boolean if data is valid. Used mostly to validate field data, but might be used across form data.
