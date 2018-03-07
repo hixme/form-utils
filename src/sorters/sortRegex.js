@@ -1,12 +1,12 @@
 import orderBy from 'lodash/sortBy'
-import fill from 'lodash/fill'
 
-const sortRegex = (rgx, min = 0, max = 0) => (arr = [], order = 'asc') => {
+const sortRegex = (rgx, min = 0, max = 0, func) => (arr = [], order = 'asc') => {
   const matched = val => {
     const matches = val.match(rgx)
-    return (max && matches.slice(min, max)) || matches.slice(min)
+    const sliced = (max && matches.slice(min, max)) || matches.slice(min)
+    return (func && func(sliced)) || sliced
   }
-  orderBy(arr, matched, fill([], order, 0, max - min))
+  return orderBy(arr, matched, order)
 }
 
 export default sortRegex
