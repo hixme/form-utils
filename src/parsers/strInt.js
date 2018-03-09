@@ -1,1 +1,3 @@
-export default str => str.replace(/\D+/g, '')
+import integer from 'helpers/regex/integer'
+
+export default str => str.replace(integer, '')
