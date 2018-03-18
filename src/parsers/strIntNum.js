@@ -3,7 +3,9 @@ import regReplace from './regReplace'
 
 export default str => {
   if (typeof str === 'string') {
-    return regReplace(integer)(str)
+    const result = regReplace(integer)(str)
+    const num = Number(result)
+    return (!Number.isNaN(num) && num.toString()) || ''
   }
   return str
 }

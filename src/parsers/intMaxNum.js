@@ -1,1 +1,1 @@
-export default max => num => (num !== '' && Math.min(max, Number(num)).toString()) || num
+export default max => num => (typeof str === 'string' && Math.min(max, Number(num)).toString()) || num

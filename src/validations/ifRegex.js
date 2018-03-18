@@ -1,3 +1,1 @@
-const ifRegex = (rgx) => str => rgx.test(str) || str === undefined
-
-export default ifRegex
+export default rgx => str => (typeof str === 'string' && rgx.test(str)) || false

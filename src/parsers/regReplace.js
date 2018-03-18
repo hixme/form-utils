@@ -1,1 +1,1 @@
-export default (rgx, repl = '') => str => str.replace(rgx, repl)
+export default (rgx, repl = '') => str => (typeof str === 'string' && str.replace(rgx, repl)) || str

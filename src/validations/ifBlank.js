@@ -1,3 +1,1 @@
-const ifBlank = val => val === '' || val === undefined
-
-export default ifBlank
+export default val => val === '' || val === undefined

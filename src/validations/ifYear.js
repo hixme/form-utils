@@ -1,8 +1,9 @@
 import moment from 'moment'
 
-const ifYear = (year = '') => () => {
+export default (year = '') => {
   const currentYear = year || Number(moment(Date.now()).format('YYYY'))
-  return val => Number(val) < currentYear || Number(val) > currentYear + 1 || val === undefined
+  return (str) => {
+    const num = Number(str)
+    return (!Number.isNaN(num) && (num === currentYear || num === currentYear + 1)) || false
+  }
 }
-
-export default ifYear

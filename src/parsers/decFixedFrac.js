@@ -1,9 +1,8 @@
 import strFixed from './strFixed'
-import strInt from './strInt'
+import strDec from './strDec'
 
-export default dec => rawStr => {
-  const str = strInt(rawStr)
-  if (str === '') return ''
+export default dec => raw => {
+  const str = strDec(raw)
   const split = str.split('.')
   if (split.length > 1) {
     return split[0].concat('.', strFixed(dec)(split[1]))
