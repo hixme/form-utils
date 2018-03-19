@@ -18,7 +18,8 @@
   ],
   "author": "David Cotelessa david.cotelessa@hixme.com",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "moment": "^2.21.0"
   },
   "peerDependencies": {
     "prop-types": "*",

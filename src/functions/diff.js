@@ -6,7 +6,8 @@ const diff = (bObj, targetObj) => {
   const iteratee = baseObj => (result = {}, value, key) => {
     const newVals = {}
     if (!isEqual(value, baseObj[key])) {
-      newVals[key] = (isObject(value) && isObject(baseObj[key]) && diff(baseObj[key], value)) || value
+      newVals[key] =
+        (isObject(value) && isObject(baseObj[key]) && diff(baseObj[key], value)) || value
     }
     return Object.assign(result, newVals)
   }

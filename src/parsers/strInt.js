@@ -1,7 +1,7 @@
-import integer from 'helpers/regex/integer'
+import integer from '../regex/integer'
 import regReplace from './regReplace'
 
-export default str => {
+export default (str) => {
   if (typeof str === 'string') {
     return regReplace(integer)(str)
   }

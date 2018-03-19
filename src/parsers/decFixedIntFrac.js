@@ -1,7 +1,7 @@
 import strFixed from './strFixed'
 import strDec from './strDec'
 
-export default (int, dec) => rawStr => {
+export default (int, dec) => (rawStr) => {
   const str = strDec(rawStr)
   const split = str.split('.')
   if (split.length > 1) {
