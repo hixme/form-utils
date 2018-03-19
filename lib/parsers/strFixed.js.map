@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/parsers/strFixed.js"],"names":["str","length","int","slice"],"mappings":";;;;;;kBAAe;AAAA,SAAO;AAAA,WAAQA,OAAOA,IAAIC,MAAJ,GAAaC,GAApB,IAA2BF,IAAIG,KAAJ,CAAU,CAAV,EAAaD,GAAb,CAA5B,IAAkDF,GAAzD;AAAA,GAAP;AAAA,C","file":"strFixed.js","sourcesContent":["export default int => str => (str && str.length > int && str.slice(0, int)) || str\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/parsers/ifDefined.js"],"names":["val","dflt","str"],"mappings":";;;;;;kBAAe,UAACA,GAAD,EAAMC,IAAN;AAAA,SAAe;AAAA,WAAQD,QAAQE,GAAR,IAAeD,IAAhB,IAAyBC,GAAhC;AAAA,GAAf;AAAA,C","file":"ifDefined.js","sourcesContent":["export default (val, dflt) => str => (val === str && dflt) || str\n"]}

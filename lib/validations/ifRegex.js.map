@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/validations/ifRegex.js"],"names":["str","rgx","test"],"mappings":";;;;;;kBAAe;AAAA,SAAO;AAAA,WAAQ,OAAOA,GAAP,KAAe,QAAf,IAA2BC,IAAIC,IAAJ,CAASF,GAAT,CAA5B,IAA8C,KAArD;AAAA,GAAP;AAAA,C","file":"ifRegex.js","sourcesContent":["export default rgx => str => (typeof str === 'string' && rgx.test(str)) || false\n"]}

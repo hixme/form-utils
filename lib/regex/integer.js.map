@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/regex/integer.js"],"names":[],"mappings":";;;;;kBAAe,M","file":"integer.js","sourcesContent":["export default /\\D+/g\n"]}
