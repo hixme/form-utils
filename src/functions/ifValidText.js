@@ -1,2 +1,2 @@
-export default (txt, valid) => (value = true, allValues, props, name) =>
-  (valid.reduce((prev, v) => prev && v(prev, allValues, props, name), value) && txt) || undefined
+export default (txt, valid) => (value, allValues, props, name) =>
+  (valid.some(v => v(value, allValues, props, name)) && txt) || undefined
