@@ -4,7 +4,24 @@ utility functions for forms, including functions, formatters, normalizers, sanit
 ## Functions
 
 **diff(baseObj = object, targetObj = object)** - deep difference between two objects. Uses lodash's transform, isEqual, isObject.
-**ifValidText(text = str, arr = [func])** - returns text if array of functions all return true. Useful for validation functions.
+```
+const objA = {a: 1, b: { c: 1, d: 0 }, e: 0}
+const objB = {a: 1, b: { c: 1, d: 1 }, e: 1}
+
+const objC = diff(objA, objB)  // => { b: { d: 1 }, e: 1 }
+```
+
+**ifValidText(text = str, arr = [func])** - returns function(text) if array of functions all return true. Useful for validation functions.
+```
+const includesText = (txt) => txt.includes('Match me.')
+const isThisText = (txt) => txt === 'Match me.'
+const validIncludeText = ifValidText('I include text.', [includesText])
+const validText = ifValidText('I'm valid.', [includesText, isThisText])
+
+const result = validIncludeText('Match me. Match you.') // returns "I include text."
+const result2 = validText('Match me.') // returns "I'm valid."
+const result = validText('Match me. Match you.') // returns undefined
+```
 
 ## Formatters
 Formatters in this context, formats string and returns it. (eg., a formatter for dollar amount would take a string like "789" and return "$789")
