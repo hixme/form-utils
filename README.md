@@ -11,23 +11,34 @@ const objB = {a: 1, b: { c: 1, d: 1 }, e: 1}
 const objC = diff(objA, objB)  // => { b: { d: 1 }, e: 1 }
 ```
 
-**ifValidText(text = str, arr = [func])** - returns function(text) if array of functions all return true. Useful for validation functions.
+**ifValidText(text = str, arr = [func])** - returns function(txt). if array of functions are true , it returns defined text, else it returns undefined. Useful for validation functions.
 ```
 const includesText = (txt) => txt.includes('Match me.')
 const isThisText = (txt) => txt === 'Match me.'
 const validIncludeText = ifValidText('I include text.', [includesText])
 const validText = ifValidText('I'm valid.', [includesText, isThisText])
 
-const result = validIncludeText('Match me. Match you.') // returns "I include text."
-const result2 = validText('Match me.') // returns "I'm valid."
-const result = validText('Match me. Match you.') // returns undefined
+const result = validIncludeText('Match me. Match you.') // => "I include text."
+const result2 = validText('Match me.') // => "I'm valid."
+const result3 = validText('Match me. Match you.') // => undefined
 ```
 
 ## Formatters
-Formatters in this context, formats string and returns it. (eg., a formatter for dollar amount would take a string like "789" and return "$789")
+Formatters in this context, formats string and returns it.
 
-**includePrefix(prefix = string)** - returns function(str) to add prefix to beginning of str. Useful for currency (eg., '123' -> '$123')
-**includeSuffix(suffix = string)** - returns function(str) to add suffix to end of str. Useful for percentages.(eg., '100' -> '100%')
+**includePrefix(prefix = string)** - returns function(str) to add prefix to beginning of str. Useful for currency.
+```
+const currencyPrefix = includePrefix('$')
+
+const result = currencyPrefix('100') // => '$100'
+```
+
+**includeSuffix(suffix = string)** - returns function(str) to add suffix to end of str. Useful for percentages.
+```
+const percentagePrefix = includeSuffix('$')
+
+const result = percentagePrefix('100') // => '100%'
+```
 
 ## Parsers
 Parsers in this context, filters characters from a string that do not match patterns, returning a string that conforms to a certain pattern. (eg., a normalizer for a string that could convert to a integer would take a string like "m&78.9" and return "789")
