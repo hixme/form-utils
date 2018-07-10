@@ -1,7 +1,7 @@
 import strInt from './strInt'
 
-export default (str = '') => {
-  if (str === '') return ''
+export default (str) => {
+  if (str === null || str === '') return ''
   if (typeof str !== 'string') return str
   const split = str.split('.')
   if (split.length > 1) {
