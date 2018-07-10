@@ -1,6 +1,6 @@
 {
   "name": "form.l",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "uutility functions for forms, including functions, formatters, normalizers, sanitizers, sorters, and validations.",
   "main": "lib/index.js",
   "directories": {
