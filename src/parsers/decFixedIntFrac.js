@@ -1,13 +1,12 @@
 import strFixed from './strFixed'
-import strDec from './strDec'
+import strInt from './strInt'
 
-export default (int, dec) => (rawStr) => {
-  const str = strDec(rawStr)
-  const split = str.split('.')
+export default (int, dec) => (strRaw) => {
+  const str = (typeof strRaw === 'string' && strRaw) || ''
+  const split = strInt(str).split('.')
   if (split.length > 1) {
     const arr = [int, dec]
     return split.slice(0, 2).map((s, idx) => strFixed(arr[idx])(s)).join('.')
   }
-  if (str === '') return ''
   return strFixed(int)(str)
 }
