@@ -1,1 +1,3 @@
-export default (rgx, repl = '') => str => (typeof str === 'string' && str.replace(rgx, repl)) || ''
+import isString from 'lodash/isString'
+
+export default (rgx, repl = '') => str => (isString(str) && str.replace(rgx, repl)) || ''

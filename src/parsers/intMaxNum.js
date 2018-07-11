@@ -1,1 +1,3 @@
-export default max => num => (typeof str === 'string' && Math.min(max, Number(num)).toString()) || num
+import isString from 'lodash/isString'
+
+export default max => num => (isString(num) && Math.min(max, Number(num)).toString()) || num
